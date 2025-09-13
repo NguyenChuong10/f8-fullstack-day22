@@ -10,7 +10,7 @@ form.onsubmit = (e) => {
 
 
     const newTodo = {
-        nameDo : todo.value ,
+        nameDo : todo.value.trim() ,
         isCompleted:false
     }
     if(!newTodo.nameDo){
@@ -18,9 +18,9 @@ form.onsubmit = (e) => {
         return;
     }
 
-    const existTask = tasks.find(task => task.name === newTodo.name )
+    const existTask = tasks.find(task => task.nameDo === newTodo.nameDo )
     if(existTask){
-        alert(`Tên công việc ${newTask.name} đã tồn tại `);
+        alert(`Tên công việc ${newTodo.nameDo} đã tồn tại `);
         return;
     }
     // thêm vào danh sách mảng task[] vừa tạo;
